@@ -1,0 +1,12 @@
+---
+   - name: Install nginx repo
+     yum: name='http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm'
+
+   - name: Install nginx package
+     yum: name=nginx state=present
+
+   - name: Enable nginx autoload
+     command: systemctl enable mysqld.service
+
+   - name: Start nginx
+     service: name=nginx state=running enabled=true
