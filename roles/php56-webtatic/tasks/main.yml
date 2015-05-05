@@ -30,5 +30,8 @@
    - name: Enable php-fpm autoload
      command: systemctl enable php-fpm
 
+   - name: Copy conf
+     template: src=www.conf.j2 dest=/etc/php-fpm.d/www.conf
+
    - name: Start php-fpm
      service: name=php-fpm state=running enabled=true

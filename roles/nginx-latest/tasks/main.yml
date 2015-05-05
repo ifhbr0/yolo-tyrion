@@ -6,7 +6,15 @@
      yum: name=nginx state=present
 
    - name: Enable nginx autoload
-     command: systemctl enable mysqld.service
+     command: systemctl enable nginx
+
+   - name: Copy nginx conf
+     template: src=nginx.conf.j2 dest=/etc/nginx/nginx.conf
+     notify: reload nginx
+
+   - name: Copy vhost conf
+     template: src=vhost.conf.j2 dest=/etc/nginx/conf.d/vhost.conf
+     notify: reload nginx     
 
    - name: Start nginx
      service: name=nginx state=running enabled=true

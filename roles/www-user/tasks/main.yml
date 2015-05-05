@@ -1,0 +1,2 @@
+---
+  - user: name={{ www_user }} home=/var/www/ shell=/sbin/nologin

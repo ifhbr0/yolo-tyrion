@@ -1,0 +1,4 @@
+---
+fpm_socket: /var/run/php-fpm-www.sock
+www_user: www
+php_session_dir: /var/lib/php/session
