@@ -1,2 +1,3 @@
 ---
-  - user: name={{ www_user }} home=/var/www/ shell=/sbin/nologin
+  - command: mkdir -p {{ site_dir }}
+  - user: name={{ www_user }} home={{ site_dir }} shell=/sbin/nologin

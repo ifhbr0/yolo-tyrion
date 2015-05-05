@@ -32,6 +32,7 @@
 
    - name: Copy conf
      template: src=www.conf.j2 dest=/etc/php-fpm.d/www.conf
+     notify: restart fpm
 
    - name: Start php-fpm
      service: name=php-fpm state=running enabled=true
