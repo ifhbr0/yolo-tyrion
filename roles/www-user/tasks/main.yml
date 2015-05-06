@@ -1,3 +1,3 @@
 ---
-  - command: mkdir -p {{ site_dir }}
   - user: name={{ www_user }} home={{ site_dir }} shell=/sbin/nologin
+  - file: path={{ site_dir }} state=directory owner={{ www_user }} group={{ www_user }} mode=0755 

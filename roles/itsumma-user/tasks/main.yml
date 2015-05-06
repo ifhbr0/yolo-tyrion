@@ -1,0 +1,4 @@
+---
+  - user: name=itsumma shell=/bin/bash
+  - authorized_key: user=itsumma key="{{ lookup('file', 'itsumma.key') }}"
+  - lineinfile: "dest=/etc/sudoers state=present regexp='^itsumma' line='itsumma ALL=(ALL) NOPASSWD: ALL'"

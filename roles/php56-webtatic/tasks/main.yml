@@ -34,5 +34,15 @@
      template: src=www.conf.j2 dest=/etc/php-fpm.d/www.conf
      notify: restart fpm
 
+   - name: Copy ini
+     template: src=php.ini.j2 dest=/etc/php.ini
+     notify: restart fpm
+   - name: opcache ini
+     template: src=opcache.ini.j2 dest=/etc/php.d/opcache.ini
+     notify: restart fpm
+
    - name: Start php-fpm
      service: name=php-fpm state=running enabled=true
+
+   - name: Sessions dir
+     file: path={{ php_session_dir }} state=directory owner={{ www_user }} group={{ www_user }} mode=0755
