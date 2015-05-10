@@ -20,7 +20,7 @@ http {
 	gzip on;
 	gzip_disable "msie6";
 	large_client_header_buffers 8 2048k;
-	
+	client_max_body_size 100m;
 	include /etc/nginx/conf.d/*.conf;
 	include /etc/nginx/sites-enabled/*;
 }
