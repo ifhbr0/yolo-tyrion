@@ -8,6 +8,9 @@
         - Percona-Server-shared-56
         - Percona-Server-server-56
         - Percona-Server-client-56
+   - name: Copy conf
+     template: src=my.cnf.j2 dest=/etc/my.cnf
+     notify: restart mysql
 
    - name: Enable mysql autoload
      command: systemctl disable mysqld.service

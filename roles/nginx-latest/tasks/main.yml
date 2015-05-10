@@ -3,7 +3,7 @@
      yum: name='http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm'
 
    - name: Install nginx package
-     yum: name=nginx state=present
+     yum: name=nginx-1.6.3 state=present
 
    - name: Enable nginx autoload
      command: systemctl enable nginx
