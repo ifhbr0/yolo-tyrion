@@ -1,6 +1,6 @@
 server {
   listen   80 default_server;
-  root {{ site_dir }};
+  root {{ vhosts_dir }}{{ domain }};
   index index.php;
   
   server_name _;
@@ -16,7 +16,7 @@ server {
   }
   location ~ \.php$ {
     fastcgi_pass unix:{{ fpm_socket }};
-    fastcgi_param  SCRIPT_FILENAME  {{ site_dir }}$fastcgi_script_name;
+    fastcgi_param  SCRIPT_FILENAME  {{ vhosts_dir }}{{ domain }}$fastcgi_script_name;
     include fastcgi_params;
   }
 }

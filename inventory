@@ -1,8 +1,8 @@
 [dbservers]
-185.22.63.118
+localhost
 
 [webservers]
-185.22.63.118
+localhost
 
 [itsumma]
-185.22.63.118
+localhost
