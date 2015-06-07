@@ -4,3 +4,4 @@
       - common
       - nginx-latest
       - php56-webtatic
+      - memcache-localhost
