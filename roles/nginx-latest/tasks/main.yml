@@ -18,3 +18,4 @@
 
    - name: Start nginx
      service: name=nginx state=running enabled=true
+   - file: path={{ vhosts_dir }}{{ domain }} state=directory owner={{ www_user }} group={{ www_user }} mode=0755
