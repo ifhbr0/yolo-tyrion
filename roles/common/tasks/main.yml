@@ -4,3 +4,6 @@
 
    - name: Disable selinux
      selinux: state=disabled
+
+   - name: Install git
+     yum: name=git state=present
