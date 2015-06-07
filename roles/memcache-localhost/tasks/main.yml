@@ -1,0 +1,11 @@
+---
+   - name: Install memcached
+     yum: name=memcached state=present
+
+   - name: Bind memcached to localhost only
+     template: src=memcached.j2 dest=/etc/sysconfig/memcached
+     notify: restart memcached
+
+   - name: Start memcached
+     service: name=memcached state=running enabled=true
+
